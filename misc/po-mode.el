@@ -317,7 +317,7 @@ slightly different."
     ("Yiddish" . "yi")
     ("Yoruba" . "yo")
     ("Zhuang" . "za")
-    { "zu", "Zulu" }
+    ("Zulu" . "zu")
     )
   "*Association list giving team codes from team names.
 This is used for generating a submission file name for the 'M' command.
@@ -615,7 +615,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.49 $" 11 -2)))
+	   (substring "$Revision: 1.50 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
