@@ -309,7 +309,7 @@ msgstr \"\"
 \"Language-Team: LANGUAGE <LL@li.org>\\n\"
 \"MIME-Version: 1.0\\n\"
 \"Content-Type: text/plain; charset=CHARSET\\n\"
-\"Content-Transfer-Encoding: 8-bit\\n\"
+\"Content-Transfer-Encoding: 8bit\\n\"
 "
   "*Default PO file header."
   :type 'string
@@ -432,7 +432,7 @@ or remove the -m if you are not using the GNU version of `uuencode'."
 (defun po-mode-version ()
   "Show Emacs PO mode version."
   (interactive)
-  (message (_"Emacs PO mode, version %s") (substring "$Revision: 1.15 $" 11 -2)))
+  (message (_"Emacs PO mode, version %s") (substring "$Revision: 1.16 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
