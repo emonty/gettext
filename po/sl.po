@@ -2,7 +2,7 @@
 # Copyright (C) 1996 Free Software Foundation, Inc.
 # Primoz Peterlin <primoz.peterlin@biofiz.mf.uni-lj.si>, 1996.
 #
-# $Header: /t/jt6021.vw6lc4/tmp.JIxFASMhcr/gettext-cvs/gettext/po/Attic/sl.po,v 1.1 2000/06/16 07:49:23 drepper Exp $
+# $Header: /t/jt6021.vw6lc4/tmp.JIxFASMhcr/gettext-cvs/gettext/po/Attic/sl.po,v 1.1.1.1 2000/06/16 07:49:23 drepper Exp $
 #
 msgid ""
 msgstr ""
