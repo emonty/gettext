@@ -34,6 +34,10 @@
 
 2003-09-10  Bruno Haible  <bruno@clisp.org>
 
+	* xreadlink.m4 (gl_XREADLINK): Remove <stdlib.h> check.
+
+2003-09-10  Bruno Haible  <bruno@clisp.org>
+
 	* setenv.m4 (gl_PREREQ_SETENV, gl_PREREQ_UNSETENV): Remove
 	<stdlib.h> and <string.h> checks.
 
