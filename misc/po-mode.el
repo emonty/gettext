@@ -1,5 +1,5 @@
 ;;; po-mode.el -- for helping GNU gettext lovers to edit PO files.
-;;; Copyright (C) 1995, 96, 97, 98, 99, 00, 01 Free Software Foundation, Inc.
+;;; Copyright (C) 1995-1999, 2000, 2001 Free Software Foundation, Inc.
 ;;; François Pinard <pinard@iro.umontreal.ca>, 1995.
 ;;; Helped by Greg McGary <gkm@magilla.cichlid.com>.
 
@@ -467,7 +467,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.30 $" 11 -2)))
+	   (substring "$Revision: 1.31 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
