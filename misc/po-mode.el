@@ -1,6 +1,6 @@
 ;;; po-mode.el -- major mode for GNU gettext PO files
 
-;; Copyright (C) 1995-1999, 2000, 2001 Free Software Foundation, Inc.
+;; Copyright (C) 1995-1999, 2000-2002 Free Software Foundation, Inc.
 
 ;; Authors: François Pinard <pinard@iro.umontreal.ca>
 ;;          Greg McGary <gkm@magilla.cichlid.com>
@@ -619,7 +619,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.58 $" 11 -2)))
+	   (substring "$Revision: 1.59 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
