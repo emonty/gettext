@@ -611,7 +611,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.45 $" 11 -2)))
+	   (substring "$Revision: 1.46 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -953,7 +953,7 @@ Called through file-coding-system-alist, before the file is visited for real."
 
 (defvar po-mode-map
   ;; Use (make-keymap) because (make-sparse-keymap) does not work on Demacs.
-  (let ((map (make-keymap)))
+  (let ((po-mode-map (make-keymap)))
     (suppress-keymap po-mode-map)
     (define-key po-mode-map "\C-i" 'po-unfuzzy)
     (define-key po-mode-map "\C-j" 'po-msgid-to-msgstr)
@@ -1011,7 +1011,7 @@ Called through file-coding-system-alist, before the file is visited for real."
     (define-key po-mode-map "\M-A" 'po-ignore-as-auxiliary)
 ;;;;  (define-key po-mode-map "\M-L" 'po-ignore-lexicon-file)
     (define-key po-mode-map "\M-S" 'po-ignore-source-path)
-    map)
+    po-mode-map)
   "Keymap for PO mode.")
 
 (defun po-mode ()
