@@ -611,7 +611,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.46 $" 11 -2)))
+	   (substring "$Revision: 1.47 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -950,6 +950,10 @@ Called through file-coding-system-alist, before the file is visited for real."
 (defvar po-mode-abbrev-table nil
   "Abbrev table used while in PO mode.")
 (define-abbrev-table 'po-mode-abbrev-table ())
+
+(defvar po-subedit-mode-syntax-table
+  "Syntax table used while in PO mode."
+  (copy-syntax-table text-mode-syntax-table))
 
 (defvar po-mode-map
   ;; Use (make-keymap) because (make-sparse-keymap) does not work on Demacs.
