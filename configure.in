@@ -10,10 +10,21 @@ ALL_LINGUAS="da de el es fr ja ko nl nn no pl pt sl sv tr"
 
 dnl Checks for programs.
 AC_PROG_CC
-AM_PROG_LIBTOOL
-AC_ISC_POSIX
 AC_PROG_INSTALL
 AC_PROG_YACC
+
+dnl Check for host type.
+AC_CANONICAL_HOST
+
+dnl Checks for UNIX variants that set DEFS,
+AC_ISC_POSIX
+
+dnl Checks for compiler output filename suffixes.
+AC_OBJEXT
+AC_EXEEXT
+
+dnl Check for build configuration.
+AM_PROG_LIBTOOL
 
 AC_DEFINE(_GNU_SOURCE, 1, [Make sure we see all GNU extensions.])
 
