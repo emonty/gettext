@@ -432,7 +432,7 @@ or remove the -m if you are not using the GNU version of `uuencode'."
 (defun po-mode-version ()
   "Show Emacs PO mode version."
   (interactive)
-  (message (_"Emacs PO mode, version %s") (substring "$Revision: 1.2 $" 11 -2)))
+  (message (_"Emacs PO mode, version %s") (substring "$Revision: 1.3 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -1811,6 +1811,7 @@ The string is properly recommented before the replacement occurs."
   (skip-chars-backward " \t\n")
   (if (eq (preceding-char) ?<)
       (delete-region (1- (point)) (point-max)))
+  (run-hooks 'po-subedit-exit-hook)
   (let ((string (buffer-string)))
     (po-subedit-abort)
     (po-find-span-of-entry)
