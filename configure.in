@@ -101,7 +101,7 @@ dnl Generate the version information file in the intl/ directory.
 test -d intl || mkdir intl
 echo "GNU gettext library from $PACKAGE-$VERSION" > intl/VERSION
 cat > intl/ChangeLog.inst <<EOF
-$RELEASE_DATE  GNU  <bug-gnu-utils@gnu.org>
+$RELEASE_DATE  GNU  <bug-gnu-gettext@gnu.org>
 
 	* Version $VERSION released.
 
