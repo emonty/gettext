@@ -35,7 +35,7 @@ write-mo.h read-java.h write-java.h read-tcl.h write-tcl.h po-time.h \
 plural-table.h format.h xgettext.h x-c.h x-po.h x-python.h x-lisp.h \
 x-elisp.h x-librep.h x-java.h x-awk.h x-ycp.h x-tcl.h x-rst.h x-glade.h
 
-EXTRA_DIST = FILES project-id \
+EXTRA_DIST = FILES project-id msgunfmt.tcl \
 gnu/gettext/DumpResource.java gnu/gettext/GetURL.java
 
 localedir = $(datadir)/locale
