@@ -22,7 +22,7 @@ dnl Checks for libraries.
 
 dnl Checks for header files.
 AC_HEADER_STDC
-AC_HAVE_HEADERS(limits.h malloc.h string.h unistd.h values.h)
+AC_CHECK_HEADERS(limits.h malloc.h string.h unistd.h values.h)
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
@@ -53,6 +53,8 @@ else
 fi
 
 AM_FUNC_ERROR_AT_LINE
+
+gt_SETLOCALE
 
 dnl These are the only lines required to internationalize the package.
 dnl (OK, not quite, the AC_OUTPUT has also some parts.)
