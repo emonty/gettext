@@ -474,7 +474,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.27 $" 11 -2)))
+	   (substring "$Revision: 1.28 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -793,6 +793,10 @@ Called through file-coding-system-alist, before the file is visited for real."
 	(po-find-file-coding-system-guts operation filename)))
 
  )
+
+(defvar po-mode-abbrev-table nil
+  "Abbrev table used while in PO mode.")
+(define-abbrev-table 'po-mode-abbrev-table ())
 
 (defvar po-mode-map nil
   "Keymap for PO mode.")
@@ -1924,6 +1928,7 @@ Run functions on po-subedit-mode-hook."
 	  (pop-to-buffer edit-buffer)
 	  (set (make-local-variable 'po-subedit-back-pointer) slot)
 	  (setq buffer-file-coding-system edit-coding)
+	  (setq local-abbrev-table po-mode-abbrev-table)
 	  (erase-buffer)
 	  (insert string "<")
 	  (goto-char (point-min))
