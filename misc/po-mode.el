@@ -467,7 +467,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.35 $" 11 -2)))
+	   (substring "$Revision: 1.36 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -1938,6 +1938,8 @@ Run functions on po-subedit-mode-hook."
 		po-edited-fields (cons slot po-edited-fields))
 	  (pop-to-buffer edit-buffer)
 	  (set (make-local-variable 'po-subedit-back-pointer) slot)
+	  (set (make-local-variable 'indent-line-function)
+	       'indent-relative)
 	  (setq buffer-file-coding-system edit-coding)
 	  (setq local-abbrev-table po-mode-abbrev-table)
 	  (erase-buffer)
