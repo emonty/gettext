@@ -6,9 +6,6 @@ AM_INIT_AUTOMAKE(gettext, 0.11)
 RELEASE_DATE=2001-05-23      dnl in "date +%Y-%m-%d" format
 AM_CONFIG_HEADER(config.h)
 
-dnl Set of available languages.
-ALL_LINGUAS="cs da de el en@quot en@boldquot es et fr gl id it ja ko nl nn no pl pt pt_BR ru sl sv tr zh"
-
 dnl Checks for programs.
 AC_PROG_CC
 AC_PROG_INSTALL
