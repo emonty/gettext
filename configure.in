@@ -3,7 +3,7 @@ AC_PREREQ(2.13)
 AC_REVISION($Revision$)
 AC_INIT(src/msgfmt.c)
 AM_INIT_AUTOMAKE(gettext, 0.10.37)
-RELEASE_DATE=2001-04-17      dnl in "date +%Y-%m-%d" format
+RELEASE_DATE=2001-04-19      dnl in "date +%Y-%m-%d" format
 AM_CONFIG_HEADER(config.h)
 
 dnl Set of available languages.
