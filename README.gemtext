@@ -36,7 +36,7 @@ you have the GNU gettext package or another internationalization package
 that can be compared with gettext already installed. You will find the
 latest version of GNU gettext at
 
-  ftp://prep.ai.mit.edu/pub/gnu
+  ftp://ftp.gnu.org/pub/gnu
 
 It compiles without any problems with the GNU C-compiler and MiNTLib PL46.
 (Well, there's a little problem:  If your msgfmt keeps on crashing with a
