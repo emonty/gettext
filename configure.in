@@ -82,14 +82,6 @@ AM_GNU_GETTEXT(use-libtool, need-ngettext)
 dnl Check for Emacs and where to install .elc files.
 AM_PATH_LISPDIR
 
-dnl The gettextize script test for the version of the aclocal.m4 file in
-dnl user's project.  This must correspond to the number the aclocal.m4
-dnl here has.  Extract it.
-changequote(,)dnl
-ACLOCAL_VERSION=`sed -e 's/.*Last updated for gettext-\([0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*\).*/\1/p' -e d $srcdir/aclocal.m4`
-changequote([, ])dnl
-AC_SUBST(ACLOCAL_VERSION)
-
 aclocaldir='${datadir}/aclocal'
 AC_SUBST(aclocaldir)
 
