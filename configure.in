@@ -6,7 +6,7 @@ AM_INIT_AUTOMAKE(gettext, 0.10.36)
 AM_CONFIG_HEADER(config.h)
 
 dnl Set of available languages.
-ALL_LINGUAS="da de el es fr ja ko nl no no@nynorsk pl pt sl sv tr"
+ALL_LINGUAS="da de el es fr ja ko nl nn no pl pt sl sv tr"
 
 dnl Checks for programs.
 AC_PROG_CC
