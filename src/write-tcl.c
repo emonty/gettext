@@ -30,9 +30,11 @@
 #include <string.h>
 
 #include "error.h"
+#include "xerror.h"
 #include "message.h"
 #include "msgl-iconv.h"
 #include "po-charset.h"
+#include "xmalloc.h"
 #include "pathname.h"
 #include "exit.h"
 #include "utf8-ucs4.h"
