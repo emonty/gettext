@@ -474,7 +474,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.24 $" 11 -2)))
+	   (substring "$Revision: 1.25 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -1856,15 +1856,15 @@ The string is properly recommented before the replacement occurs."
   (interactive)
   (let* ((edit-buffer (current-buffer))
 	 (back-pointer po-subedit-back-pointer)
-	 (marker (nth 0 back-pointer))
-	 (overlay (nth 2 back-pointer))
-	 (buffer (marker-buffer marker)))
-    (if (null buffer)
+	 (entry-marker (nth 0 back-pointer))
+	 (overlay-info (nth 2 back-pointer))
+	 (entry-buffer (marker-buffer entry-marker)))
+    (if (null entry-buffer)
 	(error (_"Corresponding PO buffer does not exist anymore"))
       (or (one-window-p) (delete-window))
-      (switch-to-buffer buffer)
-      (goto-char marker)
-      (and overlay (po-dehighlight overlay))
+      (switch-to-buffer entry-buffer)
+      (goto-char entry-marker)
+      (and overlay-info (po-dehighlight overlay-info))
       (kill-buffer edit-buffer)
       (setq po-edited-fields (delete back-pointer po-edited-fields)))))
 
@@ -2077,7 +2077,7 @@ Otherwise, move nothing, and just return `nil'."
 	    (goto-char po-start-of-msgid))
 	(goto-char start)
 	(po-find-span-of-entry)
-	(select-buffer current))
+	(set-buffer current))
       found)))
 
 (defun po-cycle-auxiliary ()
@@ -2109,12 +2109,12 @@ Otherwise, move nothing, and just return `nil'."
 (defun po-subedit-cycle-auxiliary ()
   "Cycle auxiliary file, but from the translation edit buffer."
   (interactive)
-  (if po-buffer-of-edited-entry
-      (let ((buffer (current-buffer)))
-	(pop-to-buffer po-buffer-of-edited-entry)
-	(po-cycle-auxiliary)
-	(pop-to-buffer buffer))
-    (error (_"Not editing a PO file entry"))))
+  (let* ((entry-marker (nth 0 po-subedit-back-pointer))
+	 (entry-buffer (marker-buffer entry-marker))
+	 (buffer (current-buffer)))
+    (pop-to-buffer entry-buffer)
+    (po-cycle-auxiliary)
+    (pop-to-buffer buffer)))
 
 (defun po-select-auxiliary ()
   "Select one of the available auxiliary files and locate an equivalent
