@@ -81,7 +81,7 @@ echo "GNU gettext library from $PACKAGE-$VERSION" > intl/VERSION
 
 AC_OUTPUT([Makefile lib/Makefile intl/Makefile src/Makefile \
            po/Makefile.in doc/Makefile tests/Makefile m4/Makefile \
-	   misc/Makefile misc/gettextize intl/intlh.inst], [
+	   misc/Makefile misc/gettextize], [
   dnl Workaround an automake-1.4 bug which generates an incorrect uninstall
   dnl target in misc/Makefile.in.
   sed -e 's/rm -f \$(lispdir)/rm -f \$(DESTDIR)\$(lispdir)/' < misc/Makefile \
