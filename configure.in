@@ -58,7 +58,7 @@ gt_SETLOCALE
 
 dnl These are the only lines required to internationalize the package.
 dnl (OK, not quite, the AC_OUTPUT has also some parts.)
-AM_GNU_GETTEXT
+AM_GNU_GETTEXT(use-libtool)
 
 dnl Check for Emacs and where to install .elc files.
 AM_PATH_LISPDIR
