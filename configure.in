@@ -105,5 +105,5 @@ $RELEASE_DATE  GNU  <bug-gnu-gettext@gnu.org>
 EOF
 
 AC_OUTPUT([Makefile lib/Makefile intl/Makefile src/Makefile po/Makefile.in \
-           doc/Makefile man/Makefile tests/Makefile m4/Makefile \
+           doc/Makefile man/Makefile man/x-to-1 tests/Makefile m4/Makefile \
            misc/Makefile misc/gettextize])
