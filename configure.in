@@ -56,6 +56,7 @@ AM_FUNC_GETLINE
 if test $am_cv_func_working_getline != yes; then
   AC_CHECK_FUNCS(getdelim)
 fi
+jm_PREREQ_MBSWIDTH
 
 AC_CHECK_FUNC(parse_printf_format, gt_cv_func_parse_printf_format=yes,
   gt_cv_func_parse_printf_format=no)
