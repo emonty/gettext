@@ -474,7 +474,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.26 $" 11 -2)))
+	   (substring "$Revision: 1.27 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -1669,7 +1669,7 @@ or completely delete an obsolete entry, saving its msgstr on the kill ring."
 
 	((or (eq po-entry-type 'fuzzy)
 	     (eq po-entry-type 'untranslated))
-	 (if (yes-or-no-p (_"Should I really obsolete this entry? "))
+	 (if (y-or-n-p (_"Should I really obsolete this entry? "))
 	     (progn
 	       (po-decrease-type-counter)
 	       (save-excursion
