@@ -432,7 +432,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.18 $" 11 -2)))
+	   (substring "$Revision: 1.19 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -875,8 +875,8 @@ all reachable through `M-x customize', in group `Emacs.Editing.I18n.Po'."
 
   (add-hook 'write-contents-hooks 'po-replace-revision-date)
 
-  (message (_"You may type `h' or `?' for a short PO mode reminder."))
-  (run-hooks 'po-mode-hook))
+  (run-hooks 'po-mode-hook)
+  (message (_"You may type `h' or `?' for a short PO mode reminder.")))
 
 ;;; Window management.
 
