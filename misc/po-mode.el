@@ -430,7 +430,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.20 $" 11 -2)))
+	   (substring "$Revision: 1.21 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -2659,14 +2659,16 @@ Leave point after marked string."
 (defun po-validate ()
   "Use `msgfmt' for validating the current PO file contents."
   (interactive)
-  (let ((compilation-buffer-name-function
-	 (function (lambda (mode) (progn "*PO validation*"))))
-        (compile-command (concat po-msgfmt-program
-                                 " --statistics -c -v -o " null-device " "
+  (let* ((dev-null
+	  (cond ((boundp 'null-device) null-device) ; since Emacs 20.3
+		((memq system-type '(windows-nt windows-95)) "NUL")
+		(t "/dev/null")))
+	 (compilation-buffer-name-function
+	  (function (lambda (mode) (progn "*PO validation*"))))
+	 (compile-command (concat po-msgfmt-program
+                                 " --statistics -c -v -o " dev-null " "
                                  buffer-file-name)))
-
     (po-msgfmt-version-check)
-
     (compile compile-command)))
 
 (defvar po-msgfmt-version-checked nil)
