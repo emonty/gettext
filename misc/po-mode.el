@@ -467,7 +467,7 @@ No doubt that highlighting, when Emacs does not allow it, is a kludge."
   "Show Emacs PO mode version."
   (interactive)
   (message (_"Emacs PO mode, version %s")
-	   (substring "$Revision: 1.34 $" 11 -2)))
+	   (substring "$Revision: 1.35 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -751,8 +751,9 @@ Content-Type into a Mule coding system.")
     (while (not (or short-read (re-search-forward "^msgid" nil t)))
       (save-excursion
         (goto-char (point-max))
-	(let ((pair (insert-file-contents filename nil
-					  (1- (point)) (1- (+ (point) 4096)))))
+	(let ((pair (insert-file-contents-literally filename nil
+						    (1- (point))
+						    (1- (+ (point) 4096)))))
 	  (setq short-read (< (nth 1 pair) 4096)))))
     (cond (short-read nil)
 	  ((re-search-forward charset-regexp nil t) (match-string 1))
@@ -761,7 +762,9 @@ Content-Type into a Mule coding system.")
 	  ;; isn't available, give up.
 	  (t (save-excursion
 	       (goto-char (point-max))
-	       (insert-file-contents filename nil (point) (+ (point) 1024)))
+	       (insert-file-contents-literally filename nil
+					       (1- (point))
+					       (1- (+ (point) 1024))))
 	     (if (re-search-forward charset-regexp nil t)
 		 (match-string 1))))))
 
