@@ -432,7 +432,7 @@ or remove the -m if you are not using the GNU version of `uuencode'."
 (defun po-mode-version ()
   "Show Emacs PO mode version."
   (interactive)
-  (message (_"Emacs PO mode, version %s") (substring "$Revision: 1.6 $" 11 -2)))
+  (message (_"Emacs PO mode, version %s") (substring "$Revision: 1.7 $" 11 -2)))
 
 (defconst po-help-display-string
   (_"\
@@ -1019,7 +1019,7 @@ Position %d/%d; %d translated, %d fuzzy, %d untranslated, %d obsolete")
 		       (time (current-time))
 		       (seconds (or (car (current-time-zone time)) 0))
 		       (minutes (/ (abs seconds) 60))
-		       (zone (format "%c%02d:%02d"
+		       (zone (format "%c%02d%02d"
 				     (if (< seconds 0) ?- ?+)
 				     (/ minutes 60)
 				     (% minutes 60))))
