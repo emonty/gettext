@@ -27,6 +27,7 @@ AC_HAVE_HEADERS(limits.h malloc.h string.h unistd.h values.h)
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
 AC_C_INLINE
+AC_C_BACKSLASH_A
 AC_TYPE_OFF_T
 AC_TYPE_SIZE_T
 AM_TYPE_PTRDIFF_T
