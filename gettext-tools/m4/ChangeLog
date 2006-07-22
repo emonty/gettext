@@ -1,5 +1,7 @@
 2006-07-22  Bruno Haible  <bruno@clisp.org>
 
+	* fnmatch.m4: Update from gnulib.
+
 	* error.m4: Update from gnulib.
 	* extensions.m4: Update from gnulib.
 
