@@ -8,6 +8,7 @@
 	* m4/pathmax.m4.diff: Remove file.
 	* m4/unlocked-io.m4.diff: Remove file.
 	* m4/exitfail.m4.diff: Update.
+	* m4/hard-locale.m4.diff: Update.
 
 2006-08-22  Bruno Haible  <bruno@clisp.org>
 
